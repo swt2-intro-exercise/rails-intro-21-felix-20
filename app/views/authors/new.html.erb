@@ -1,0 +1,25 @@
+Hello YOU! <br>
+This is the new_author page. <br>
+<br>
+Please enter your credentials to register:
+
+<%= form_with scope: :author, local: true do |form| %>
+    <p>
+      <%= form.label :first_name %><br>
+      <%= form.text_field :first_name %>
+    </p>
+
+    <p>
+      <%= form.label :last_name %><br>
+      <%= form.text_field :last_name %>
+    </p>
+
+    <p>
+      <%= form.label :homepage %><br>
+      <%= form.text_field :homepage %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
