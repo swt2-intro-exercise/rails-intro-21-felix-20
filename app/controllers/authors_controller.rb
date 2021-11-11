@@ -10,6 +10,10 @@ class AuthorsController < ApplicationController
       puts @author
     end
 
+    def index
+      Author.all
+    end
+
     def show
       @author = Author.find(params[:id])
     end
