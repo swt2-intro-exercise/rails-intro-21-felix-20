@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "new_author", to: "authors#new" 
   post "new_author", to: "authors#create" 
 
-  get "authors" to: "authors#index"
+  get "authors/index", to: "authors#index"
 
   resources :authors
 

@@ -11,7 +11,7 @@ class AuthorsController < ApplicationController
     end
 
     def index
-      Author.all
+      @authors = Author.all
     end
 
     def show
