@@ -3,7 +3,7 @@ This is the new_author page. <br>
 <br>
 Please enter your credentials to register:
 
-<%= form_with scope: :author, local: true do |form| %>
+<%= form_with scope: :author,url: new_author_path, local: true do |form| %>
     <p>
       <%= form.label :first_name %><br>
       <%= form.text_field :first_name %>
@@ -22,4 +22,4 @@ Please enter your credentials to register:
     <p>
       <%= form.submit %>
     </p>
-  <% end %>
+<% end %>
