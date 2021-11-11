@@ -15,4 +15,16 @@ describe "author index page", type: :feature do
     expect(page).to have_text("Name")
     expect(page).to have_text("Homepage")
   end
+
+  it "should have a link to delete an author" do
+    visit authors_index_path
+
+    author = author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
+    author.save
+
+    count_before_delete = Author.count
+
+    find('Delete').click
+    
+    assert count_before_delete > Author.count
 end
