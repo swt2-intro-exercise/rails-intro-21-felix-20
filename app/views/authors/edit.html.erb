@@ -1,0 +1,38 @@
+<h1> Welcome to the Author Edit Page </h1>
+
+Just edit your data here:
+
+<%= form_with model: @author, local: true do |form| %>
+    <p>
+      <%= form.label :first_name %><br>
+      <%= form.text_field :first_name %>
+    </p>
+
+    <p>
+      <%= form.label :last_name %><br>
+      <%= form.text_field :last_name %>
+    </p>
+
+    <p>
+      <%= form.label :homepage %><br>
+      <%= form.text_field :homepage %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+
+  <% if @author.errors.any? %>
+  <div id="error_explanation">
+    <p>
+      <%= pluralize(@author.errors.count,"error") %> prohibited
+      this author from being saved:
+    </h2>
+    <p>
+      <% @author.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    </div>
+  <% end %>
+<% end %>
