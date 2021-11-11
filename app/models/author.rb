@@ -1,6 +1,7 @@
 class Author < ApplicationRecord
 
-    attr_accessor :first_name, :last_name, :homepage
+    #attr_accessor :first_name, :last_name, :homepage
+    #attr_reader :first_name, :last_name, :homepage
     # def initialize(params)
     #     @first_name = params[:first_name]
     #     @last_name = params[:last_name]
@@ -24,6 +25,6 @@ class Author < ApplicationRecord
     # end
 
     def name()
-        @first_name + " " + @last_name
+        self.first_name + " " + self.last_name
     end
 end
