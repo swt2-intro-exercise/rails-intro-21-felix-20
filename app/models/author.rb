@@ -1,28 +1,5 @@
 class Author < ApplicationRecord
-
-    #attr_accessor :first_name, :last_name, :homepage
-    #attr_reader :first_name, :last_name, :homepage
-    # def initialize(params)
-    #     @first_name = params[:first_name]
-    #     @last_name = params[:last_name]
-    #     if params.has_key?(:homepage)
-    #         @homepage = params[:homepage]
-    #     else
-    #         @homepage = ""
-    #     end
-    # end
-
-    # def first_name
-    #     @first_name
-    # end
-
-    # def last_name
-    #     @last_name
-    # end
-
-    # def homepage
-    #     @homepage
-    # end
+    validates :last_name, presence: true, length: { minimum: 1 }
 
     def name()
         self.first_name + " " + self.last_name

@@ -13,4 +13,9 @@ describe "author", type: :model do
     expect(author.last_name).to eq("Turing")
     expect(author.homepage).to eq(nil)
   end
+
+  it "should not validate an author without last_name" do
+    author = Author.new(first_name: "Alan")
+    expect(author).to_not be_valid
+  end
 end
