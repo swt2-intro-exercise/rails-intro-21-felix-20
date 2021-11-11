@@ -3,7 +3,11 @@ class Author < ApplicationRecord
     def initialize(params)
         @first_name = params[:first_name]
         @last_name = params[:last_name]
-        @homepage = params[:homepage]
+        if params.has_key?(:homepage)
+            @homepage = params[:homepage]
+        else
+            @homepage = ""
+        end
     end
 
     def first_name
