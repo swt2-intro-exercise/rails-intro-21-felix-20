@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :papers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rails routes".
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -15,6 +16,18 @@ Rails.application.routes.draw do
 
   get "edit_author", to: "authors#edit" 
   post "edit_author", to: "authors#update" 
+
+
+  get "new_paper", to: "papers#new" 
+  post "new_paper", to: "papers#create" 
+
+  get "papers/index", to: "papers#index"
+
+  resources :papers
+
+  get "edit_paper", to: "papers#edit" 
+  post "edit_paper", to: "papers#update" 
+  
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
