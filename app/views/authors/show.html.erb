@@ -13,4 +13,11 @@
   <%= @author.homepage %>
 </p>
 
+<p>
+  <strong>papers:</strong>
+  <% @author.papers.each do |paper| %>
+    <%= paper.title %>
+  <% end %>
+</p>
+
 <%= link_to 'Index Page', authors_index_path %>
