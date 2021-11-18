@@ -1,0 +1,40 @@
+<h1>Hello YOU! </h1>
+
+<h2>This is the new_author page. </h2>
+<br>
+Please enter the authors credentials to register:
+
+<%= form_with scope: :author,url: new_author_path, local: true do |form| %>
+    <p>
+      <%= form.label :first_name %><br>
+      <%= form.text_field :first_name %>
+    </p>
+
+    <p>
+      <%= form.label :last_name %><br>
+      <%= form.text_field :last_name %>
+    </p>
+
+    <p>
+      <%= form.label :homepage %><br>
+      <%= form.text_field :homepage %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+
+  <% if @author.errors.any? %>
+  <div id="error_explanation">
+    <p>
+      <%= pluralize(@author.errors.count,"error") %> prohibited
+      this author from being saved:
+    </h2>
+    <p>
+      <% @author.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    </div>
+  <% end %>
+<% end %>
